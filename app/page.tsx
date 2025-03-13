@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, BarChart2, Brain, TrendingUp } from "lucide-react"
 import { FeatureCard } from "@/components/feature-card"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function Home() {
   const container = {
@@ -25,24 +26,36 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center px-4 py-24 text-center bg-background">
+      <section className="flex flex-col items-center justify-center px-4 py-24 text-center  bg-background">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+       <div className="flex flex-col items-center">
+       <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             AI-Powered Stock Trading <span className="text-primary">Insights</span>
           </h1>
-          <p className="max-w-2xl mt-6 text-xl text-muted-foreground">
+          <p className="max-w-2xl mt-6 text-xl text-muted-foreground self-center">
             Make smarter investment decisions with our advanced AI analysis and real-time technical indicators.
           </p>
-          <div className="mt-10">
+       </div>
+          <div className="mt-10 mb-10">
             <Link href="/sign-in">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
                 Get Started <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>
+          <div className="relative w-full max-w-5xl mx-auto aspect-video bg-gray-800/30 rounded-lg overflow-hidden  ">
+          <Image
+            src="/dasboard.jpg"
+            alt="Ai-powered-Trading-insights platform dashboard"
+            width={1200}
+            height={600}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+          </div>
         </motion.div>
       </section>
-
+  
       {/* Features Section */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
