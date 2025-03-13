@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "AI Stock Trading",
   description: "AI-Powered Stock Trading Insights",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
